@@ -6,7 +6,7 @@ import (
 )
 
 func TestRegisteredRoutes(t *testing.T) {
-	for _, p := range []string{"/booking"} {
+	for _, p := range []string{"/booking", "/cancel"} {
 		r := httptest.NewRecorder()
 		routes().ServeHTTP(r, httptest.NewRequest("GET", p, nil))
 		if r.Code == 404 {
